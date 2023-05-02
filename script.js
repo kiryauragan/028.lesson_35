@@ -17,7 +17,7 @@ const products = [
 	{ id: 6, name: "Шампунь", price: 16, categoryId: 2 },
 	{ id: 7, name: "Рюкзак", price: 17, categoryId: 3 },
 	{ id: 8, name: "Палатка", price: 18, categoryId: 3 },
-	{ id: 9, name: "ЧайникЫ", price: 19, categoryId: 3 },
+	{ id: 9, name: "Чайник", price: 19, categoryId: 3 },
 ];
 
 const renderCategories = () => {
@@ -59,16 +59,19 @@ const renderProductDetails = (product) => {
 	productDetailsElement.innerHTML = `
         <h3>${product.name}</h3>
         <div>$ ${product.price}</div>
-        <button class="btn_buy">Buy</button>
+        <button class="btn_buy">Купить</button>
     `;
 	productDetailsElement
 		.querySelector(".btn_buy")
 		.addEventListener("click", () => {
-			alert(`You bought ${product.name}!`);
-			renderProducts();
-			renderProductDetails();
+			const orderForm = document.querySelector(".orderForm");
+			orderForm.style.display = "block";
 		});
 	productDetailsContainer.appendChild(productDetailsElement);
+
+	// добавить eventListener для заказа
+
+
 };
 
 renderCategories();
