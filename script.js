@@ -66,12 +66,36 @@ const renderProductDetails = (product) => {
 		.addEventListener("click", () => {
 			const orderForm = document.querySelector(".orderForm");
 			orderForm.style.display = "block";
+			dataTable.style.display = "block";
 		});
 	productDetailsContainer.appendChild(productDetailsElement);
+};
 
-	// добавить eventListener для заказа
+function addDataToTable() {
+	let name = document.getElementById("username").value;
+	let city = document.getElementById("city").value;
+	let postOffice = document.getElementById("post-office").value;
+	let payment = document.getElementById("payment-method").value;
+	let quantity = document.getElementById("quantity").value;
+	let comment = document.getElementById("comment").value;
 
+	let table = document.getElementById("dataTable");
+	let row = table.insertRow();
+	let nameCell = row.insertCell();
+	let cityCell = row.insertCell();
+	let postOfficeCell = row.insertCell();
+	let paymentCell = row.insertCell();
+	let cityCell = row.insertCell();
+	let quantityCell = row.insertCell();
+	let commentCell = row.insertCell();
 
+	nameCell.textContent = name;
+	cityCell.textContent = city;
+	postOfficeCell.textContent = post-office;
+	paymentCell.textContent = payment-method;
+	cityCell.textContent = city;
+	quantityCell.textContent = quantity;
+	commentCell.textContent = comment;
 };
 
 renderCategories();
